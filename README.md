@@ -10,10 +10,8 @@
     -
     <br/>
     <br/>
-    <a href="https://github.com/yodapp/Philosopher AT B4j"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/yodapp/Philosopher AT B4j"><strong>Short description »</strong></a>
     <br/>
-    <br/>
-    <a href="https://github.com/yodapp/Philosopher AT B4j">View Demo</a>
     .
     <a href="https://github.com/yodapp/Philosopher AT B4j/issues">Report Bug</a>
     .
@@ -21,24 +19,24 @@
   </p>
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/yodapp/Philosopher AT B4j/total) ![Issues](https://img.shields.io/github/issues/yodapp/Philosopher AT B4j) 
+![Downloads](https://img.shields.io/github/downloads/yodapp/Philosopher AT B4j/total) ![Issues](https://img.shields.io/github/issues/yodapp/Philosopher AT B4j)
 
 ## Table Of Contents
 
-* [About the Project](#about-the-project)
-* [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Contributing](#contributing)
-* [Authors](#authors)
-* [Acknowledgements](#acknowledgements)
+- [About the Project](#about-the-project)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [Acknowledgements](#acknowledgements)
 
 ## About The Project
 
 ![Screen Shot](https://raw.githubusercontent.com/Yodapp/PhilosopherAI-B4J/master/philosopher.png)
 
-Ask any question you like to the wise philosopher.
+Ask any question you like to the wise philosopher. Use OpenAI GPT-3 API as a philosopher. This project can be used as a getting started projekt for B4j as well.
 
 Attention:
 You need an OpenAI GPT-3 API key.
@@ -52,18 +50,13 @@ B4j
 Install B4j, open the project and try to run it.
 It's only tested on Windows 10 so far.
 
-### Installation
-
+Report any issues.
 
 ```
 
-## Usage
-
-Interesting answers, that's for sure. :-)
-
-Remember to add your key before you send any questions.
-
 ## Contributing
+
+I suggest that you see this as a good starting point ant not as a project this will be very active. With that said, just send a pull request and I'll be more than happy to accept it.
 
 
 
@@ -84,3 +77,4 @@ Remember to add your key before you send any questions.
 * []()
 * []()
 * []()
+```
