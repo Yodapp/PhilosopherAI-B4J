@@ -1,6 +1,6 @@
 ﻿ModuleBookmarks0=
-ModuleBreakpoints0=49,61,71
+ModuleBreakpoints0=
 ModuleClosedNodes0=
-NavigationStack=Main,GetApiKey,69,0,Main,sliderTemp_ValueChange,33,6,Main,sliderTopP_ValueChange,43,6,Main,AppStart,25,0,Main,btnAskPhilosopher_Click,32,6,Main,Process_Globals,18,6,Visual Designer,Layout1.bjl,-100,6,Main,PostRequestToOpenAI,60,6,Main,ParseResponse,75,6,Main,GetJson,94,6
+NavigationStack=Main,GetApiKey,69,0,Main,PostRequestToOpenAI,60,6,Main,ParseResponse,75,6,Visual Designer,Layout1.bjl,-100,6,Main,Process_Globals,19,6,Main,AppStart,22,0,Main,btnAskPhilosopher_Click,40,6,Main,sliderTemp_ValueChange,43,6,Main,sliderTopP_ValueChange,48,6,Main,GetJson,95,6
 SelectedBuild=0
 VisibleModules=

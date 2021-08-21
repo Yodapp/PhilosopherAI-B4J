@@ -32,6 +32,8 @@ Sub Process_Globals
 	Private btnAskPhilosopher As Button
 	Private sliderTemp As Slider
 	Private sliderTopP As Slider
+	Private temperature As Double
+	Private topP As Double
 End Sub
 
 Sub AppStart (Form1 As Form, Args() As String)
@@ -55,10 +57,12 @@ End Sub
 
 Private Sub sliderTemp_ValueChange (Value As Double)
 	lblCurrentTemp.Text = Round2(Value, 2)
+	temperature = Round2(Value, 2)
 End Sub
 
 Private Sub sliderTopP_ValueChange (Value As Double)
 	lblCurrentTopP.Text = Round2(Value, 2)
+	topP = Round2(Value, 2)
 End Sub
 
 Private Sub PostRequestToOpenAI() As ResumableSub
@@ -105,10 +109,7 @@ End Sub
 Private Sub GetJson() As String
 	Dim json As JSONGenerator
 	Dim values As Map
-	Dim temperature = sliderTemp.Value As Double
-	Dim topP = sliderTopP.Value As Double
 	Dim topic = GetTopic As String
-
 	values.Initialize
 	values.Put("prompt", topic)
 	values.Put("temperature", temperature)
