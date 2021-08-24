@@ -1,7 +1,9 @@
 ﻿AppType=JavaFX
 Build1=Default,b4j.example
 File1=Layout1.bjl
+File2=philosopher-square-Close.png
 FileGroup1=Default Group
+FileGroup2=Default Group
 Group=Default Group
 Library1=jcore
 Library2=jfx
@@ -9,7 +11,7 @@ Library3=jokhttputils2
 Library4=json
 Library5=jxui
 Library6=okhttp
-NumberOfFiles=1
+NumberOfFiles=2
 NumberOfLibraries=6
 NumberOfModules=0
 Version=9.1
@@ -23,7 +25,6 @@ Sub Process_Globals
 	Private fx As JFX
 	Private MainForm As Form
 	Private xui As XUI 
-	Private txtPhilosopherAnswer As TextArea
 	Private lblCurrentTemp As Label
 	Private lblCurrentTopP As Label
 	Private lblKey As Label
@@ -34,6 +35,10 @@ Sub Process_Globals
 	Private sliderTopP As Slider
 	Private temperature As Double
 	Private topP As Double
+	Private lblThinking As Label
+	Private lblAnswer As Label
+	Private scroll As ScrollPane
+	Private imgPhilosopher As ImageView
 End Sub
 
 Sub AppStart (Form1 As Form, Args() As String)
@@ -41,18 +46,40 @@ Sub AppStart (Form1 As Form, Args() As String)
 	MainForm.RootPane.LoadLayout("Layout1")
 	lblCurrentTemp.Text = "0.5"
 	lblCurrentTopP.Text = "0.5"
+	imgPhilosopher.Visible = False
+	scroll.Visible = False
+	scroll.InnerNode = lblAnswer
 	MainForm.Show
 End Sub
 
 Private Sub btnAskPhilosopher_Click
-	txtPhilosopherAnswer.Text = "Waiting for the wise philosopher..."
-	btnAskPhilosopher.Enabled = False
+	toggleViews(True)
+	
 	Dim result = PostRequestToOpenAI As ResumableSub
 	Wait For(result) complete (complete As String)
+	
 	Dim answer As String
 	answer = ParseResponse(complete)
-	txtPhilosopherAnswer.Text = answer
-	btnAskPhilosopher.Enabled = True
+	
+	Dim output As StringBuilder
+	output.Initialize
+	lblAnswer.Text = answer
+	
+	toggleViews(False)
+End Sub
+
+Private Sub toggleViews(isThinking As Boolean)
+	If isThinking Then
+		scroll.Visible = False
+		imgPhilosopher.Visible = True
+		btnAskPhilosopher.Enabled = False
+		lblAnswer.Visible = False
+	Else
+		scroll.Visible = True
+		imgPhilosopher.Visible = False
+		btnAskPhilosopher.Enabled = True
+		lblAnswer.Visible = True
+	End If
 End Sub
 
 Private Sub sliderTemp_ValueChange (Value As Double)
